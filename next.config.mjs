@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+export function webpack(config) {
+	config.resolve.fallback = {
+		fs: false, // Excluir el módulo fs en el cliente
+	};
+	return config;
+}
